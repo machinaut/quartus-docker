@@ -7,16 +7,19 @@ Run Quartus on Mac under docker.  Uses `socat` to tunnel X11 over port 6000.
 - Single docker image for development and debugging for the DE10-Nano board
 - Usable for continuous integration (building/testing) on a remote server
 
+## Instructions:
+
+This requires Rocker to build: https://github.com/grammarly/rocker#installation
+
+    make
+
+Note: you might want to temporarily allow your docker daemon to consume all CPUs,
+the installers take a really long time on my machine (~6 minutes each).
+
 ### TODO:
 
-- makefile target to run a persistent container image, instead of rm-ing it
-- Have makefile / dockerfile download quartus files directly if possible
-- Ensure downloaded .run files are executable
-- check MD5 sums of downloaded files
-- test out downloading the whole 6.1GB quartus tarfile and build from that
-- Build/install the FPGA SoC Embedded Development Suite (EDS) tools as well
 - Get setup with ARM DS-5 community (free) license to do ethernet debugging
-- Ethernet debugging to docker container (hoping this works!)
+- Ethernet debugging to docker container over host networking
 
 ### Postscript: For Xilinx folks out there:
 
